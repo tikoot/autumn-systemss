@@ -61,7 +61,7 @@
 
 
   <div class="isolate bg-white px-6 py-24 sm:py-32 lg:px-8">
-    <div aria-hidden="true" class="absolute inset-0 grid grid-cols-2 -space-x-52 opacity-40 dark:opacity-20">
+    <div aria-hidden="true" class="absolute inset-0 grid grid-cols-2 -space-x-52 opacity-40 dark:opacity-20 -z-10">
       <div class="blur-[106px] h-56 bg-gradient-to-br from-[#9333EA] to-purple-400 dark:from-blue-700"></div>
       <div class="blur-[106px] h-32 bg-gradient-to-r from-cyan-400 to-sky-300 dark:to-indigo-600"></div>
   </div>
@@ -72,61 +72,77 @@
       <h2 class="text-4xl font-semibold tracking-tight text-balance text-gray-900 sm:text-5xl">Contact sales</h2>
       <p class="mt-2 text-lg/8 text-gray-600">Aute magna irure deserunt veniam aliqua magna enim voluptate.</p>
     </div>
-    <form action="#" method="POST" class="mx-auto mt-16 max-w-xl sm:mt-20">
+    <form id="contact-form" class="mx-auto mt-16 max-w-xl sm:mt-20">
       <div class="sm:col-span-2">
-        <div>
-            <label class="lock mt-4 text-sm font-medium text-gray-700">Name <span class="text-red-500">*</span></label>
-            <input type="text" name="name" required class="mt-1 p-2 w-full border rounded">
-        </div>
-
-        <div class="sm:col-span-2">
-            <label class="block mt-4 text-sm font-medium text-gray-700">Designation <span class="text-red-500">*</span></label>
-            <input type="text" name="designation" required class="mt-1 p-2 w-full border rounded">
-        </div>
-        <div class="sm:col-span-2">
-            <label class="block mt-4 text-sm font-medium text-gray-700">Company <span class="text-red-500">*</span></label>
-            <input type="text" name="company" required class="mt-1 p-2 w-full border rounded">
-        </div>
-        <div class="sm:col-span-2">
-            <label class="block mt-4 text-sm font-medium text-gray-700">Email <span class="text-red-500">*</span></label>
-            <input type="email" name="email" required pattern="[^@\s]+@[^@\s]+\.[^@\s]+" class="mt-1 p-2 w-full border rounded">
-        </div>
-        <div class="sm:col-span-2">
-            <label class="block mt-4 text-sm font-medium text-gray-700">Phone</label>
-      <input type="tel" name="phone" class="mt-1 p-2 w-full border rounded">
-        </div>
-        <div class="sm:col-span-2">
-            <label class="block mt-4 text-sm font-medium text-gray-700">Subject <span class="text-red-500">*</span></label>
-      <select name="subject" required class="mt-1 p-2 w-full border rounded">
-        <option value="">Select an option</option>
-        <option value="Request a demo">Request a demo</option>
-        <option value="Products or Solutions">Products or Solutions</option>
-        <option value="Partnering with us">Partnering with us</option>
-        <option value="Other sales related matters">Other sales related matters</option>
-      </select>
-        </div>
-        <div class="sm:col-span-2">
-            <label class="block mt-4 text-sm font-medium text-gray-700">Message <span class="text-red-500">*</span></label>
-            <textarea name="message" required class="mt-1 p-2 w-full border rounded" rows="4"></textarea>
-          </div>
-          <div class="sm:col-span-2">
-            <label for="file-upload" class="block mt-4 text-sm font-medium text-gray-700 flex items-center gap-2 text-md cursor-pointer">
-              <img src="https://relevant.software/nitropack_static/TqXlJfYhrhJnKzqmEcbTXlLptKXNutMz/assets/images/optimized/rev-4b094ec/relevant.software/img/inhtml/attach-file.svg" alt="Paperclip">
-              Attach File
-            </label>
-            <input id="file-upload" type="file" class="hidden">
-          </div>
-     <div class="sm:col-span-2">
+        <label class="block mt-4 text-sm font-medium text-gray-700">Name <span class="text-red-500">*</span></label>
+        <input type="text" name="name" required class="mt-1 p-2 w-full border rounded">
+      </div>
+      <div class="sm:col-span-2">
+        <label class="block mt-4 text-sm font-medium text-gray-700">Designation <span class="text-red-500">*</span></label>
+        <input type="text" name="designation" required class="mt-1 p-2 w-full border rounded">
+      </div>
+      <div class="sm:col-span-2">
+        <label class="block mt-4 text-sm font-medium text-gray-700">Company <span class="text-red-500">*</span></label>
+        <input type="text" name="company" required class="mt-1 p-2 w-full border rounded">
+      </div>
+      <div class="sm:col-span-2">
+        <label class="block mt-4 text-sm font-medium text-gray-700">Email <span class="text-red-500">*</span></label>
+        <input type="email" name="email" required class="mt-1 p-2 w-full border rounded">
+      </div>
+      <div class="sm:col-span-2">
+        <label class="block mt-4 text-sm font-medium text-gray-700">Phone</label>
+        <input type="tel" name="phone" class="mt-1 p-2 w-full border rounded">
+      </div>
+      <div class="sm:col-span-2">
+        <label class="block mt-4 text-sm font-medium text-gray-700">Subject <span class="text-red-500">*</span></label>
+        <select name="subject" required class="mt-1 p-2 w-full border rounded">
+          <option value="">Select an option</option>
+          <option value="Request a demo">Request a demo</option>
+          <option value="Products or Solutions">Products or Solutions</option>
+          <option value="Partnering with us">Partnering with us</option>
+          <option value="Other sales related matters">Other sales related matters</option>
+        </select>
+      </div>
+      <div class="sm:col-span-2">
+        <label class="block mt-4 text-sm font-medium text-gray-700">Message <span class="text-red-500">*</span></label>
+        <textarea name="message" required class="mt-1 p-2 w-full border rounded" rows="4"></textarea>
+      </div>
+      <div class="sm:col-span-2">
+        <label for="file-upload" class="block mt-4 text-sm font-medium text-gray-700 flex items-center gap-2 text-md cursor-pointer">
+          <img src="https://relevant.software/nitropack_static/TqXlJfYhrhJnKzqmEcbTXlLptKXNutMz/assets/images/optimized/rev-4b094ec/relevant.software/img/inhtml/attach-file.svg" alt="Paperclip">
+          Attach File
+        </label>
+        <input id="file-upload" type="file" name="file" class="hidden" onchange="showFileName()">
+      </div>
+      
+      <div id="file-name" class="mt-2 text-sm text-gray-700 hidden">
+        No file selected
+      </div>
+      <!-- <div class="sm:col-span-2">
+        <label for="file-upload" class="block mt-4 text-sm font-medium text-gray-700 flex items-center gap-2 text-md cursor-pointer">
+          <img src="https://relevant.software/nitropack_static/TqXlJfYhrhJnKzqmEcbTXlLptKXNutMz/assets/images/optimized/rev-4b094ec/relevant.software/img/inhtml/attach-file.svg" alt="Paperclip">
+          Attach File
+        </label>
+        <input id="file-upload" type="file" name="file" class="hidden">
+      </div> -->
+      <div class="sm:col-span-2">
         <div class="mt-4 flex items-start">
-            <input type="checkbox" name="terms" required class="mr-2 mt-[4px]">
-            <label class="text-sm text-gray-700">By sending a message you agree with your information being stored by us in relation to dealing with your inquiry. Please have a look at our <a href="#" class="font-bold">Privacy Policy.</a> </label>
-          </div>
-     </div>
+          <input type="checkbox" name="terms" required class="mr-2 mt-[4px]">
+          <label class="text-sm text-gray-700">
+            By sending a message you agree with your information being stored by us in relation to dealing with your inquiry. Please have a look at our <a href="#" class="font-bold">Privacy Policy.</a>
+          </label>
+        </div>
+      </div>
+      <div class="sm:col-span-2">
+        <div class="g-recaptcha" data-sitekey="YOUR_RECAPTCHA_SITE_KEY"></div>
       </div>
       <div class="mt-10">
-        <button type="submit" class="block w-full rounded-md bg-[#e0f2fe] px-3.5 py-2.5 text-center text-sm font-semibold text-gray-700 shadow-xs  focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Let's talk</button>
+        <button type="submit" class="block w-full rounded-md bg-[#e0f2fe] px-3.5 py-2.5 text-center text-sm font-semibold text-gray-700 shadow-xs">Let's talk</button>
       </div>
     </form>
+    
+    <p id="response-message" class="mt-4 text-center"></p>
+    
   </div>
   
   <footer class="">
@@ -231,22 +247,70 @@
     </div>
   </footer>
     
-  
+    
   <script>
-    // JavaScript to toggle the mobile menu
-    const menuToggle = document.getElementById('menu-toggle');
-    const navMenu = document.getElementById('nav-menu');
-    const closeMenu = document.getElementById('close-menu');
-
-    menuToggle.addEventListener('click', () => {
-      navMenu.classList.remove('translate-x-full');
-      navMenu.classList.add('translate-x-0');
+    document.getElementById("contact-form").addEventListener("submit", async function (event) {
+      event.preventDefault();
+  
+      const formData = new FormData(this);
+  
+      try {
+        const response = await fetch("YOUR_CLIENT_API_URL", {
+          method: "POST",
+          body: formData,
+        });
+  
+        const result = await response.json();
+  
+        if (response.ok) {
+          document.getElementById("response-message").innerText = "Email sent successfully!";
+          this.reset();
+        } else {
+          document.getElementById("response-message").innerText = "Failed to send email.";
+        }
+      } catch (error) {
+        document.getElementById("response-message").innerText = "An error occurred.";
+      }
     });
 
-    closeMenu.addEventListener('click', () => {
-      navMenu.classList.remove('translate-x-0');
-      navMenu.classList.add('translate-x-full');
-    });
+    function showFileName() {
+    const fileInput = document.getElementById("file-upload");
+    const fileNameDisplay = document.getElementById("file-name");
+    const file = fileInput.files[0];
+
+    if (file) {
+      fileNameDisplay.textContent = `Selected file: ${file.name}`;
+      fileNameDisplay.classList.remove("hidden");
+    } else {
+      fileNameDisplay.textContent = "No file selected";
+      fileNameDisplay.classList.add("hidden");
+    }
+  }
+  
+  document.getElementById("contact-form").addEventListener("submit", async function (event) {
+    event.preventDefault();
+    
+    const formData = new FormData(this);
+    
+    try {
+      const response = await fetch("YOUR_CLIENT_API_URL", {
+        method: "POST",
+        body: formData,
+      });
+
+      const result = await response.json();
+
+      if (response.ok) {
+        document.getElementById("response-message").innerText = "Email sent successfully!";
+        this.reset();
+        document.getElementById("file-name").classList.add("hidden"); // Hide file name after submission
+      } else {
+        document.getElementById("response-message").innerText = "Failed to send email.";
+      }
+    } catch (error) {
+      document.getElementById("response-message").innerText = "An error occurred.";
+    }
+  });
   </script>
 </body>
 </html>
